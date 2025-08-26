@@ -32,6 +32,8 @@ body {
 .site-header {
   background: var(--blue);
   border-bottom: 4px solid var(--gold);
+  position: relative;
+  z-index: 1000;
 }
 
 .main-nav {
@@ -41,6 +43,8 @@ body {
   display: flex;
   align-items: center;
   gap: 1rem;
+  position: relative;
+  z-index: 1000;
 }
 
 .logo img {
@@ -607,6 +611,7 @@ input:focus, textarea:focus {
     opacity: 0;
     pointer-events: none;
     transition: transform var(--speed) ease, opacity var(--speed) ease;
+    z-index: 1001;
   }
   
   .nav-links li {
@@ -644,7 +649,7 @@ input:focus, textarea:focus {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  z-index: 0;
+  z-index: 1;
 }
 
 /* Each Slide */
@@ -661,7 +666,7 @@ input:focus, textarea:focus {
 /* Active Slide */
 .hero-slide.active {
   opacity: 1;
-  z-index: 1;
+  z-index: 2;
 }
 
 /* Slide Images */
@@ -685,5 +690,5 @@ input:focus, textarea:focus {
 
 .hero-inner {
   position: relative;
-  z-index: 2;
+  z-index: 10;
 }
