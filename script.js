@@ -112,3 +112,43 @@ if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
 } else {
   document.documentElement.style.scrollBehavior = 'smooth';
 }
+
+// Hero Slideshow Initialization
+document.addEventListener('DOMContentLoaded', function () {
+  initializeHeroSlideshow();
+});
+
+let currentHeroSlide = 0;
+
+function initializeHeroSlideshow() {
+  const heroSlides = document.querySelectorAll('.hero-slide');
+
+  if (heroSlides.length === 0) return;
+
+  // Create a shuffled array of slide indices
+  const shuffledIndices = Array.from({ length: heroSlides.length }, (_, i) => i);
+  shuffleArray(shuffledIndices);
+
+  // Mark the first slide as active
+  heroSlides[shuffledIndices[0]].classList.add('active');
+
+  setInterval(() => {
+    // Remove active class from current slide
+    heroSlides[shuffledIndices[currentHeroSlide]].classList.remove('active');
+
+    // Move to the next slide index
+    currentHeroSlide = (currentHeroSlide + 1) % shuffledIndices.length;
+
+    // Add active class to new current slide
+    heroSlides[shuffledIndices[currentHeroSlide]].classList.add('active');
+  }, 2000); // Change slide every 2 seconds
+}
+
+// Fisher-Yates shuffle
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+}
+
