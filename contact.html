@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact • ISAT U 120th Anniversary</title>
+  <link rel="stylesheet" href="contact.css" />
+  <link rel="shortcut icon" href="images/ISAT-U-logo-2.png" type="image/x-icon" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <nav class="main-nav" aria-label="Primary">
+      <a href="index.html" class="logo" aria-label="ISAT-U Home">
+        <img src="images/ISAT-U-logo-2.png" alt="ISAT-U Logo" />
+      </a>
+
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Open menu">
+        <span class="bar" aria-hidden="true"></span>
+        <span class="bar" aria-hidden="true"></span>
+        <span class="bar" aria-hidden="true"></span>
+      </button>
+
+      <ul id="nav-menu" class="nav-links">
+        <li><a href="index.html" data-nav>Home</a></li>
+        <li><a href="about.html" data-nav>About</a></li>
+        <li><a href="contact.html" class="active" data-nav>Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main" class="contact container">
+    <header class="page-hero">
+      <h1>Get in Touch</h1>
+      <p>Questions about events, participation, or partnerships? We’d love to hear from you.</p>
+    </header>
+
+    <section class="contact-grid section">
+      <div class="contact-info">
+        <h2>Organizing Committee</h2>
+        <ul>
+          <li>Email: <a href="mailto:anniv@isat-u.edu.ph">anniv@isat-u.edu.ph</a></li>
+          <li>Phone: (033) 123-4567</li>
+          <li>Address: ISAT-U Miagao Campus</li>
+        </ul>
+
+        <h3>Office Hours</h3>
+        <p>Mon–Fri, 8:00 AM – 5:00 PM</p>
+      </div>
+
+      <form class="contact-form" id="contactForm" novalidate>
+        <div class="field">
+          <label for="name">Full Name</label>
+          <input id="name" name="name" type="text" required placeholder="Juan Dela Cruz" />
+          <small class="error" aria-live="polite"></small>
+        </div>
+
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required placeholder="you@example.com" />
+          <small class="error" aria-live="polite"></small>
+        </div>
+
+        <div class="field">
+          <label for="msg">Message</label>
+          <textarea id="msg" name="msg" rows="5" required placeholder="How can we help?"></textarea>
+          <small class="error" aria-live="polite"></small>
+        </div>
+
+        <button type="submit" class="btn btn-gold">Send Message</button>
+        <p class="form-status" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <nav aria-label="Footer">
+      <ul class="footer-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
+    <p>&copy; 2025 ISAT-U</p>
+  </footer>
+
+  <dialog class="lightbox" aria-label="Image viewer">
+    <button class="lightbox-close" aria-label="Close">&times;</button>
+    <img src="" alt="" />
+  </dialog>
+
+  <button class="to-top" aria-label="Back to top">↑</button>
+
+  <script src="script.js"></script>
+</body>
+</html>

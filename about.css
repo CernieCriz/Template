@@ -1,0 +1,69 @@
+@import url('index.css'); /* Optional: if your judge allows imports. If not, copy needed vars below */
+
+/* Override container/page specifics to keep styles per-page valid even without @import */
+:root{--blue:#003366;--blue-2:#00264d;--gold:#FFD700;--ink:#1f2937;--muted:#f5f7fb;--radius:14px;--shadow:0 8px 24px rgba(0,0,0,.12);--speed:260ms}
+*{box-sizing:border-box} html,body{margin:0}
+body{font-family:system-ui,Segoe UI,Arial,sans-serif;color:var(--ink);background:var(--muted)}
+
+.site-header{background:var(--blue);border-bottom:4px solid var(--gold)}
+.main-nav{max-width:1200px;margin:0 auto;padding:.75rem 1rem;display:flex;align-items:center;gap:1rem}
+.logo img{height:48px}
+.nav-toggle{margin-left:auto;display:none;background:none;border:0;cursor:pointer}
+.nav-toggle .bar{display:block;width:26px;height:3px;background:#fff;margin:5px 0}
+.nav-links{list-style:none;display:flex;gap:1rem;margin-left:auto}
+.nav-links a{display:block;padding:.5rem .9rem;border-radius:999px;text-decoration:none;color:#fff;font-weight:600}
+.nav-links a:hover{background:rgba(255,255,255,.12)}
+.nav-links .active{background:var(--gold);color:var(--blue)}
+
+.container{max-width:1200px;margin:0 auto;padding: clamp(2rem,4vw,3rem) 1rem}
+.page-hero{text-align:center;margin-top:1rem}
+.page-hero h1{color:var(--blue);font-size:clamp(1.6rem,3.5vw,2.4rem);margin:.25rem 0}
+.page-hero p{max-width:800px;margin:0 auto}
+
+.section{padding: clamp(2rem,4vw,3rem) 0}
+.section-title{text-align:center;color:var(--blue);margin-bottom:1rem}
+
+.values-grid{
+  display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+}
+.value-card{
+  background:#fff;border-radius:var(--radius);padding:1rem;box-shadow:var(--shadow);
+  transition:transform var(--speed) ease, box-shadow var(--speed) ease;
+}
+.value-card:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(0,0,0,.18)}
+.value-card h3{color:var(--blue);margin:.25rem 0}
+
+.schedule-grid{
+  display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))
+}
+.sched-item{
+  background:#fff;border-left:6px solid var(--gold);border-radius:var(--radius);padding:1rem;box-shadow:var(--shadow)
+}
+.sched-item time{display:inline-block;font-weight:800;color:var(--blue);margin-bottom:.25rem}
+.sched-item h4{margin:.15rem 0;color:var(--blue)}
+
+.btn{border:2px solid transparent;padding:.7rem 1.1rem;border-radius:999px;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block}
+.btn-gold{background:var(--gold);color:var(--blue)}
+.btn:hover{box-shadow:var(--shadow);transform:translateY(-2px)}
+.cta{text-align:center;background:#fff;margin:0 auto;max-width:900px;border-radius:var(--radius);box-shadow:var(--shadow)}
+
+.site-footer{margin-top:2rem;background:var(--blue-2);color:#fff;padding:1rem;text-align:center}
+.footer-nav{list-style:none;display:flex;gap:.75rem;justify-content:center;margin:0 0 .5rem}
+.footer-nav a{color:#fff;text-decoration:none;padding:.35rem .75rem;border-radius:999px}
+.footer-nav a:hover{background:rgba(255,255,255,.12)}
+.footer-nav .active{background:var(--gold);color:var(--blue)}
+
+.lightbox::backdrop{background:rgba(0,0,0,.55)}
+.lightbox{border:0;padding:0;border-radius:16px}
+.lightbox img{max-width:90vw;max-height:80vh}
+.lightbox-close{position:absolute;right:.5rem;top:.25rem;border:0;background:transparent;color:#fff;font-size:2rem;cursor:pointer}
+
+.to-top{position:fixed;right:1rem;bottom:1rem;border:0;border-radius:999px;padding:.6rem .75rem;background:var(--gold);color:var(--blue);cursor:pointer;box-shadow:var(--shadow);display:none}
+.to-top:hover{transform:translateY(-2px)}
+
+@media(max-width:900px){
+  .nav-toggle{display:block;color:#fff}
+  .nav-links{position:absolute;inset:64px 0 auto 0;background:var(--blue);display:grid;gap:0;border-top:1px solid rgba(255,255,255,.15);transform:translateY(-120%);opacity:0;pointer-events:none;transition:.26s}
+  .nav-links.open{transform:translateY(0);opacity:1;pointer-events:auto}
+}
+@media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important}}
